@@ -16,6 +16,7 @@ export const Search = props => {
     setAddError,
     setApiLimitReached,
     setPlaylist,
+    setPlayError,
     playlist,
     cookies
   } = props;
@@ -54,6 +55,7 @@ export const Search = props => {
         setApiLimitReached(false);
         setAddError(true);
       });
+    setPlayError(false);
   };
 
   return (

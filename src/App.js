@@ -41,6 +41,7 @@ function App() {
         setApiLimitReached(true);
       });
     setAddError(false);
+    setPlayError(false);
     setPlayWindowOpen(false);
   };
   const handleRemoveFromPlaylist = result => {
@@ -52,6 +53,7 @@ function App() {
     if (playWindowOpen) {
       setPlayWindowOpen(false);
       setAddError(false);
+      setPlayError(false);
     } else {
       if (playlist.length > 0) {
         setPlayWindowOpen(true);
@@ -59,6 +61,7 @@ function App() {
         setPlayError(true);
       }
       setAddError(false);
+      setApiLimitReached(false);
     }
   };
 
@@ -75,6 +78,7 @@ function App() {
         playWindowOpen={playWindowOpen}
         setPlaylist={setPlaylist}
         setAddError={setAddError}
+        setPlayError={setPlayError}
         playlist={playlist}
         cookies={cookies}
         setApiLimitReached={setApiLimitReached}
