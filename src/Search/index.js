@@ -14,6 +14,7 @@ export const Search = props => {
     playWindowOpen,
     searchString,
     setAddError,
+    setApiLimitReached,
     setPlaylist,
     playlist,
     cookies
@@ -50,6 +51,7 @@ export const Search = props => {
         cookies.set("playlist", JSON.stringify(newPlaylist), { path: "/" });
       })
       .catch(err => {
+        setApiLimitReached(false);
         setAddError(true);
       });
   };

@@ -71,6 +71,7 @@ function App() {
         setAddError={setAddError}
         playlist={playlist}
         cookies={cookies}
+        setApiLimitReached={setApiLimitReached}
       />
       <Container>
         <Row>
