@@ -7,6 +7,7 @@ import title from "./title.png";
 import AddError from "./AddError";
 import ApiLimitWindow from "./ApiLimitWindow";
 import PlayList from "./PlayList";
+import PlayError from "./PlayError";
 import PlayWindow from "./PlayWindow";
 import Search from "./Search";
 import SearchResults from "./SearchResults";
@@ -21,6 +22,7 @@ function App() {
   const cookies = new Cookies();
   const [playlist, setPlaylist] = useState(cookies.get("playlist") || []);
   const [searchString, setSearchString] = useState("");
+  const [playError, setPlayError] = useState(false);
   const [searchResults, setSearchResults] = useState([]);
   const [playWindowOpen, setPlayWindowOpen] = useState(false);
   const [addError, setAddError] = useState(false);
@@ -51,7 +53,11 @@ function App() {
       setPlayWindowOpen(false);
       setAddError(false);
     } else {
-      setPlayWindowOpen(true);
+      if (playlist.length > 0) {
+        setPlayWindowOpen(true);
+      } else {
+        setPlayError(true);
+      }
       setAddError(false);
     }
   };
@@ -87,6 +93,7 @@ function App() {
             )}
             {apiLimitReached && !playWindowOpen && <ApiLimitWindow />}
             {addError && !playWindowOpen && <AddError />}
+            {playError && !playWindowOpen && <PlayError />}
             {playWindowOpen && <PlayWindow playlist={playlist} />}
           </Col>
           <Col sm={4}>
