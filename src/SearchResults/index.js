@@ -29,9 +29,7 @@ export const SearchResults = props => {
     cookies.set("playlist", JSON.stringify(newPlaylist), { path: "/" });
   };
   const inPlaylist = result => {
-    const plid = pluck("video_id", playlist);
-    const inc = includes(result, plid);
-    return inc;
+    return includes(result.id.videoId, pluck("videoId", playlist));
   };
 
   return (
@@ -42,12 +40,14 @@ export const SearchResults = props => {
             <Col md={4} key={result.id.videoId}>
               <Card>
                 <Card.Img
+                  className={
+                    inPlaylist(result) ? "grayscale-selected" : "grayscale"
+                  }
                   variant="top"
                   src={result.snippet.thumbnails.medium.url}
                 />
                 <Card.Body>
-                  <Card.Title>{result.snippet.title}</Card.Title>
-                  <Card.Text>{result.snippet.description}</Card.Text>
+                  <Card.Text>{result.snippet.title}</Card.Text>
                   <AddToPlayListButton
                     handleAddToPlaylist={handleAddToPlaylist}
                     handleRemoveFromPlaylist={handleRemoveFromPlaylist}

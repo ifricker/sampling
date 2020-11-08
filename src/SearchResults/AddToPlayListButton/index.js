@@ -11,18 +11,18 @@ export const AddToPlayListButton = props => {
   } = props;
 
   return (
-    <div>
+    <div className="center">
       {!inPlaylist && (
-        <Button variant="primary" onClick={() => handleAddToPlaylist(result)}>
-          Add To Playlist
+        <Button
+          variant="outline-secondary"
+          onClick={() => handleAddToPlaylist(result)}
+        >
+          add
         </Button>
       )}
       {inPlaylist && (
-        <Button
-          variant="danger"
-          onClick={() => handleRemoveFromPlaylist(result)}
-        >
-          Remove From Playlist
+        <Button variant="dark" onClick={() => handleRemoveFromPlaylist(result)}>
+          remove
         </Button>
       )}
     </div>

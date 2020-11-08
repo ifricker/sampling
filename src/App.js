@@ -41,7 +41,16 @@ function App() {
     setPlayWindowOpen(false);
   };
   const handleRemoveFromPlaylist = result => {
-    const newPlaylist = without([result], playlist);
+    const newPlaylist = without(
+      [
+        {
+          videoId: result.id.videoId,
+          title: result.snippet.title,
+          imgSrc: result.snippet.thumbnails.default.url
+        }
+      ],
+      playlist
+    );
     setPlaylist(newPlaylist);
     cookies.set("playlist", newPlaylist, { path: "/" });
   };
