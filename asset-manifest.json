@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/sampling.ianfricker.com/static/css/main.11e44095.chunk.css",
-    "main.js": "/sampling.ianfricker.com/static/js/main.b8af0b72.chunk.js",
-    "main.js.map": "/sampling.ianfricker.com/static/js/main.b8af0b72.chunk.js.map",
-    "runtime-main.js": "/sampling.ianfricker.com/static/js/runtime-main.fb718716.js",
-    "runtime-main.js.map": "/sampling.ianfricker.com/static/js/runtime-main.fb718716.js.map",
-    "static/css/2.1a02f21c.chunk.css": "/sampling.ianfricker.com/static/css/2.1a02f21c.chunk.css",
-    "static/js/2.094492e1.chunk.js": "/sampling.ianfricker.com/static/js/2.094492e1.chunk.js",
-    "static/js/2.094492e1.chunk.js.map": "/sampling.ianfricker.com/static/js/2.094492e1.chunk.js.map",
-    "index.html": "/sampling.ianfricker.com/index.html",
-    "static/css/2.1a02f21c.chunk.css.map": "/sampling.ianfricker.com/static/css/2.1a02f21c.chunk.css.map",
-    "static/css/main.11e44095.chunk.css.map": "/sampling.ianfricker.com/static/css/main.11e44095.chunk.css.map",
-    "static/js/2.094492e1.chunk.js.LICENSE.txt": "/sampling.ianfricker.com/static/js/2.094492e1.chunk.js.LICENSE.txt"
+    "main.css": "/sampling/static/css/main.11e44095.chunk.css",
+    "main.js": "/sampling/static/js/main.b8af0b72.chunk.js",
+    "main.js.map": "/sampling/static/js/main.b8af0b72.chunk.js.map",
+    "runtime-main.js": "/sampling/static/js/runtime-main.06398e26.js",
+    "runtime-main.js.map": "/sampling/static/js/runtime-main.06398e26.js.map",
+    "static/css/2.1a02f21c.chunk.css": "/sampling/static/css/2.1a02f21c.chunk.css",
+    "static/js/2.094492e1.chunk.js": "/sampling/static/js/2.094492e1.chunk.js",
+    "static/js/2.094492e1.chunk.js.map": "/sampling/static/js/2.094492e1.chunk.js.map",
+    "index.html": "/sampling/index.html",
+    "static/css/2.1a02f21c.chunk.css.map": "/sampling/static/css/2.1a02f21c.chunk.css.map",
+    "static/css/main.11e44095.chunk.css.map": "/sampling/static/css/main.11e44095.chunk.css.map",
+    "static/js/2.094492e1.chunk.js.LICENSE.txt": "/sampling/static/js/2.094492e1.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.fb718716.js",
+    "static/js/runtime-main.06398e26.js",
     "static/css/2.1a02f21c.chunk.css",
     "static/js/2.094492e1.chunk.js",
     "static/css/main.11e44095.chunk.css",
