@@ -20,7 +20,7 @@ export const PlayList = props => {
         {playlist.length > 0 && (
           <Row className="padding-5">
             <Col>
-              <h3>Playlist</h3>
+              <h3 className="fancy-font">Playlist</h3>
             </Col>
             <Col>
               <Button variant="secondary" onClick={() => handleClearPlaylist()}>
@@ -41,10 +41,10 @@ export const PlayList = props => {
                 </Col>
                 <Col className="horizontal" md={2}>
                   <Button
-                    variant="danger"
+                    variant="secondary"
                     onClick={() => handleRemoveFromPlaylist(song)}
                   >
-                    {"-"}
+                    x
                   </Button>
                 </Col>
               </Row>

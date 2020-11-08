@@ -76,7 +76,7 @@ export const Search = props => {
           variant="outline-secondary"
           onClick={() => onSearchButtonClick()}
         >
-          Search
+          search
         </Button>
         <Button
           type="submit"
@@ -87,12 +87,12 @@ export const Search = props => {
         </Button>
         {!playWindowOpen && (
           <Button variant="outline-secondary" onClick={() => handlePlayClick()}>
-            Play
+            play
           </Button>
         )}
         {playWindowOpen && (
           <Button variant="dark" onClick={() => handlePlayClick()}>
-            Play
+            play
           </Button>
         )}
       </InputGroup.Append>

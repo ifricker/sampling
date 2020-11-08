@@ -3,7 +3,6 @@ import { without } from "ramda";
 import "./App.css";
 import Cookies from "universal-cookie";
 
-import title from "./title.png";
 import AddError from "./AddError";
 import ApiLimitWindow from "./ApiLimitWindow";
 import PlayList from "./PlayList";
@@ -15,7 +14,6 @@ import youtube from "./youtube";
 
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import Image from "react-bootstrap/Image";
 import Row from "react-bootstrap/Row";
 
 function App() {
@@ -68,7 +66,7 @@ function App() {
   return (
     <div className="App">
       <Container>
-        <Image className="title-height" src={title} />
+        <div className="fancy-font title">Sampling</div>
       </Container>
       <Search
         setSearchString={setSearchString}

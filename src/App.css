@@ -1,14 +1,27 @@
+:root {
+  --grey: #555555;
+  --light-orange: #EAB25D;
+  --orange: #E29253;
+  --dark-orange: #B47353;
+  --dark-red: #795555;
+}
+
 .App {
   margin: 0 5% 5% 5%;
 }
 
-.horizontal {
-  margin: auto;
+.fancy-font {
+  font-family: 'Leckerli One';
+  color: var(--grey);
 }
 
-.title-height {
-  padding-top: 2%;
-  padding-bottom: 1%;
+.title {
+  font-size: 8vh;
+  padding: 1% 0;
+}
+
+.horizontal {
+  margin: auto;
 }
 
 .scroll {
