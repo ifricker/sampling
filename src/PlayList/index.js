@@ -42,7 +42,7 @@ export const PlayList = props => {
                 <Col className="horizontal" md={2}>
                   <Button
                     variant="secondary"
-                    onClick={() => handleRemoveFromPlaylist(song)}
+                    onClick={() => handleRemoveFromPlaylist(song, true)}
                   >
                     x
                   </Button>

@@ -21,7 +21,10 @@ export const AddToPlayListButton = props => {
         </Button>
       )}
       {inPlaylist && (
-        <Button variant="dark" onClick={() => handleRemoveFromPlaylist(result)}>
+        <Button
+          variant="dark"
+          onClick={() => handleRemoveFromPlaylist(result, false)}
+        >
           remove
         </Button>
       )}

@@ -2,6 +2,7 @@ import React from "react";
 import { append, includes, pluck } from "ramda";
 
 import Card from "react-bootstrap/Card";
+import CardColumns from "react-bootstrap/CardColumns";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -33,34 +34,34 @@ export const SearchResults = props => {
   };
 
   return (
-    <Container className="padding-5">
-      <Row md={3} className="scroll">
+    <div className="scroll pad-top">
+      <CardColumns>
         {results.map(result => {
           return (
-            <Col md={4} key={result.id.videoId}>
-              <Card>
-                <Card.Img
-                  className={
-                    inPlaylist(result) ? "grayscale-selected" : "grayscale"
-                  }
-                  variant="top"
-                  src={result.snippet.thumbnails.medium.url}
+            <Card>
+              <Card.Img
+                className={
+                  inPlaylist(result) ? "grayscale-selected" : "grayscale"
+                }
+                variant="top"
+                src={result.snippet.thumbnails.medium.url}
+              />
+              <Card.Body>
+                <Card.Text className="title-text">
+                  {result.snippet.title}
+                </Card.Text>
+                <AddToPlayListButton
+                  handleAddToPlaylist={handleAddToPlaylist}
+                  handleRemoveFromPlaylist={handleRemoveFromPlaylist}
+                  inPlaylist={inPlaylist(result)}
+                  result={result}
                 />
-                <Card.Body>
-                  <Card.Text>{result.snippet.title}</Card.Text>
-                  <AddToPlayListButton
-                    handleAddToPlaylist={handleAddToPlaylist}
-                    handleRemoveFromPlaylist={handleRemoveFromPlaylist}
-                    inPlaylist={inPlaylist(result)}
-                    result={result}
-                  />
-                </Card.Body>
-              </Card>
-            </Col>
+              </Card.Body>
+            </Card>
           );
         })}
-      </Row>
-    </Container>
+      </CardColumns>
+    </div>
   );
 };
 

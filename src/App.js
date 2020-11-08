@@ -40,17 +40,21 @@ function App() {
       });
     setPlayWindowOpen(false);
   };
-  const handleRemoveFromPlaylist = result => {
-    const newPlaylist = without(
-      [
-        {
-          videoId: result.id.videoId,
-          title: result.snippet.title,
-          imgSrc: result.snippet.thumbnails.default.url
-        }
-      ],
-      playlist
-    );
+  const handleRemoveFromPlaylist = (result, fromPlaylist) => {
+    const song = () => {
+      if (fromPlaylist) {
+        return [result];
+      } else {
+        return [
+          {
+            videoId: result.id.videoId,
+            title: result.snippet.title,
+            imgSrc: result.snippet.thumbnails.default.url
+          }
+        ];
+      }
+    };
+    const newPlaylist = without(song(), playlist);
     setPlaylist(newPlaylist);
     cookies.set("playlist", newPlaylist, { path: "/" });
   };
