@@ -12,11 +12,9 @@ export const Search = props => {
     setSearchString,
     handlePlayClick,
     playWindowOpen,
+    setErrorContent,
     searchString,
-    setAddError,
-    setApiLimitReached,
     setPlaylist,
-    setPlayError,
     playlist,
     cookies
   } = props;
@@ -47,15 +45,16 @@ export const Search = props => {
           playlist
         );
         setSearchString("");
-        setAddError(false);
+        setErrorContent(null);
         setPlaylist(newPlaylist);
         cookies.set("playlist", JSON.stringify(newPlaylist), { path: "/" });
       })
       .catch(err => {
-        setApiLimitReached(false);
-        setAddError(true);
+        setErrorContent({
+          heading: "Video Not Found",
+          body: "Check youtube url and try again."
+        });
       });
-    setPlayError(false);
   };
 
   return (

@@ -3,10 +3,8 @@ import { without } from "ramda";
 import "./App.css";
 import Cookies from "universal-cookie";
 
-import AddError from "./AddError";
-import ApiLimitWindow from "./ApiLimitWindow";
 import PlayList from "./PlayList";
-import PlayError from "./PlayError";
+import ErrorAlert from "./ErrorAlert";
 import PlayWindow from "./PlayWindow";
 import Search from "./Search";
 import SearchResults from "./SearchResults";
@@ -20,11 +18,9 @@ function App() {
   const cookies = new Cookies();
   const [playlist, setPlaylist] = useState(cookies.get("playlist") || []);
   const [searchString, setSearchString] = useState("");
-  const [playError, setPlayError] = useState(false);
   const [searchResults, setSearchResults] = useState([]);
   const [playWindowOpen, setPlayWindowOpen] = useState(false);
-  const [addError, setAddError] = useState(false);
-  const [apiLimitReached, setApiLimitReached] = useState(false);
+  const [errorContent, setErrorContent] = useState();
   const onSearchButtonClick = async () => {
     await youtube
       .get("/search", {
@@ -34,12 +30,14 @@ function App() {
       })
       .then(response => {
         setSearchResults(response.data.items);
+        setErrorContent(null);
       })
       .catch(err => {
-        setApiLimitReached(true);
+        setErrorContent({
+          heading: "API Limit Reached",
+          body: "You can still add youtube url above."
+        });
       });
-    setAddError(false);
-    setPlayError(false);
     setPlayWindowOpen(false);
   };
   const handleRemoveFromPlaylist = result => {
@@ -50,16 +48,16 @@ function App() {
   const handlePlayClick = () => {
     if (playWindowOpen) {
       setPlayWindowOpen(false);
-      setAddError(false);
-      setPlayError(false);
     } else {
       if (playlist.length > 0) {
         setPlayWindowOpen(true);
+        setErrorContent(null);
       } else {
-        setPlayError(true);
+        setErrorContent({
+          heading: "Playlist empty",
+          body: "Add songs to playlist and try again."
+        });
       }
-      setAddError(false);
-      setApiLimitReached(false);
     }
   };
 
@@ -75,11 +73,9 @@ function App() {
         handlePlayClick={handlePlayClick}
         playWindowOpen={playWindowOpen}
         setPlaylist={setPlaylist}
-        setAddError={setAddError}
-        setPlayError={setPlayError}
+        setErrorContent={setErrorContent}
         playlist={playlist}
         cookies={cookies}
-        setApiLimitReached={setApiLimitReached}
       />
       <Container>
         <Row>
@@ -93,9 +89,9 @@ function App() {
                 cookies={cookies}
               />
             )}
-            {apiLimitReached && !playWindowOpen && <ApiLimitWindow />}
-            {addError && !playWindowOpen && <AddError />}
-            {playError && !playWindowOpen && <PlayError />}
+            {errorContent && !playWindowOpen && (
+              <ErrorAlert content={errorContent} />
+            )}
             {playWindowOpen && <PlayWindow playlist={playlist} />}
           </Col>
           <Col sm={4}>
