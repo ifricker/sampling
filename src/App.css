@@ -14,14 +14,6 @@
   text-align: center;
 }
 
-.title-text {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2; /* number of lines to show */
-  -webkit-box-orient: vertical;
-}
-
 img.grayscale-selected {
   filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
   filter: gray; /* IE6-9 */
@@ -46,10 +38,6 @@ img.grayscale {
   padding: 1% 0;
 }
 
-.horizontal {
-  margin: auto;
-}
-
 .scroll {
   height: 75vh;
   overflow-y: auto;
@@ -57,22 +45,6 @@ img.grayscale {
 .list-scroll {
   height: 65vh;
   overflow-y: auto;
-}
-
-.padding-5 {
-  padding: 5%;
-}
-
-.center {
-  text-align: center;
-}
-
-.small-text {
-  font-size: 0.7em;
-}
-
-.pad-top {
-  padding-top: 1%;
 }
 
 .form-icon {
@@ -88,32 +60,7 @@ img.grayscale {
 .main-window {
   padding-top: 2%;
 }
-.playlist-img {
-  max-width:100%;
-  height:auto;
-}
-.playlist-video-title {
-  overflow: hidden;
-}
-.list-item {
-}
-.fill-width {
-    min-width: 100%;
-    height: auto;
-}
-.fill-height {
-    min-height: 100%;
-    width: auto;
-}
-.bg-white {
-  background-color: white;
-  height: 64px;
-}
 
-.search-image {
-  width: 365px;
-  height: 140px;
-}
 .search-add-to-playlist {
   margin: auto !important;
   margin-bottom: 5% !important;
