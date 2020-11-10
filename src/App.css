@@ -34,8 +34,11 @@ img.grayscale {
 }
 
 .fancy-font {
-  font-family: 'Leckerli One';
-  color: var(--grey);
+  font-family: 'Leckerli One' !important;
+  color: var(--grey) !important;
+}
+.color-grey {
+  color: var(--grey) !important;
 }
 
 .title {
@@ -49,6 +52,10 @@ img.grayscale {
 
 .scroll {
   height: 75vh;
+  overflow-y: auto;
+}
+.list-scroll {
+  height: 65vh;
   overflow-y: auto;
 }
 
@@ -66,4 +73,60 @@ img.grayscale {
 
 .pad-top {
   padding-top: 1%;
+}
+
+.form-icon {
+  background-color: transparent !important;
+}
+
+.form-icon:hover {
+    color: var(--orange);
+    text-shadow: 0 0 15px #3b5998;
+    transition: all 0.5s ease;
+}
+
+.main-window {
+  padding-top: 2%;
+}
+.playlist-img {
+  max-width:100%;
+  height:auto;
+}
+.playlist-video-title {
+  overflow: hidden;
+}
+.list-item {
+}
+.fill-width {
+    min-width: 100%;
+    height: auto;
+}
+.fill-height {
+    min-height: 100%;
+    width: auto;
+}
+.bg-white {
+  background-color: white;
+  height: 64px;
+}
+
+.search-image {
+  width: 365px;
+  height: 140px;
+}
+.search-add-to-playlist {
+  margin: auto !important;
+  margin-bottom: 5% !important;
+}
+.card-class {
+  height: 100%;
+}
+.title-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3; /* number of lines to show */
+  line-height: 1.5em;        /* fallback */
+  height: 4.5em;       /* fallback */
 }
